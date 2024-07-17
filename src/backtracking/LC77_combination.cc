@@ -12,13 +12,14 @@ void back_tracking(int n, int k, int start_index) {
         return;
     }
 
-    if ((n - start_index + 1) < k) { //剪枝优化
+    //错误的剪枝方法：
+    /* if ((n - start_index + 1) < k) { //剪枝优化
         return;
-    }
+    } */
 
-    for(int i = start_index; i <= n; i++) {
+    for(int i = start_index; i <= (n -  (k - path.size()))  + 1; i++) {  //正确的剪枝方法
         path.push_back(i);
-        back_tracking(n, k, i + 1);
+        back_tracking(n, k, i + 1);  //错误： back_tracking(n, k, start_index + 1)
         path.pop_back();
     }
 
