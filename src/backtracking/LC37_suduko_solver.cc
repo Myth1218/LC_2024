@@ -92,8 +92,8 @@ int main() {
                                 Itr->second   =   new value; */
 
                 
-                vector<int> temp2;
-                temp2 = (row_map.find(i))->second;
+                vector<int> temp2; //qw
+                 temp2 = (row_map.find(i))->second;
                 temp2.push_back(stoi(board[i][j]));
 
                 
